@@ -1,11 +1,8 @@
 package io.pivotal.pal.tracker;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     private List<TimeEntry> timeEntries = new ArrayList();
     private long currentId = 1L;
