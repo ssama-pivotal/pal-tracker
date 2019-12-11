@@ -9,6 +9,9 @@ public class TimeEntry {
     private LocalDate date;
     private int hours;
 
+    public TimeEntry() {
+    }
+
     public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.projectId = projectId;
         this.userId = userId;
@@ -24,38 +27,28 @@ public class TimeEntry {
         this.hours = hours;
     }
 
-    public TimeEntry() {
-    }
-
-    long getProjectId() {
-        return projectId;
-    }
-
-    long getUserId() {
-        return userId;
-    }
-
-    LocalDate getDate() {
-        return date;
-    }
-
-    int getHours() {
-        return hours;
-    }
-
     public long getId() {
         return id;
     }
 
-    @Override
-    public String toString() {
-        return "TimeEntry{" +
-                "id=" + id +
-                ", projectId=" + projectId +
-                ", userId=" + userId +
-                ", date=" + date +
-                ", hours=" + hours +
-                '}';
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getProjectId() {
+        return projectId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getHours() {
+        return hours;
     }
 
     @Override
@@ -80,5 +73,16 @@ public class TimeEntry {
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + hours;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "TimeEntry{" +
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date='" + date + '\'' +
+                ", hours=" + hours +
+                '}';
     }
 }
